@@ -14,11 +14,11 @@ def save_output(
         if os.path.exists(output_path):
             # Prompt the user to confirm if they want to delete the existing file
             print(
-                "\n\n\nnorskGPT: An output file already exists. Do you want to rename it? (y/n):"
+                "\n\n\nnorskGPT:  En output-fil finnes allerede. Vil du gi den et nytt navn? (y/n):"
             )
             response = input("User: ")
             if response.lower() == "y":
-                print("\nnorskGPT: Please enter a new file name: ")
+                print("\nnorskGPT: Vennligst skriv inn et nytt filnavn: ")
                 new_file_name = input("User: ")
                 if save_doc:
                     new_file_name = new_file_name.strip() + ".docx"
@@ -27,7 +27,7 @@ def save_output(
                 new_output_path = os.path.join(output_dir, new_file_name)
                 os.rename(output_path, new_output_path)
                 print(
-                    f"\nnorskGPT: File '{output_file}' renamed to '{new_file_name}'.\n\n\n"
+                    f"\nnorskGPT: Filnavn '{output_file}' endret til '{new_file_name}'.\n\n\n"
                 )
 
         elif not os.path.exists(output_dir):
@@ -62,21 +62,21 @@ def main(api_key, mod, max_tokens, temp, output_dir, message):
 
     # Check if user wants to save last response to file
     user_response = input(
-        "norskGPT: Would you like me to save as 1. txt, 2. docx otherwise I won't save the chat (1/2)?"
+        "norskGPT: Vil du at jeg skal lagre som 1. txt, 2. docx ellers vil jeg ikke lagre chatten (1/2)?"
     )
     if int(user_response) == 1:
         output_file = "output.txt"
         save_flag = True
-        print("norskGPT: Saving as TXT file")
+        print("norskGPT: Lagrer som TXT-fil")
     elif int(user_response) == 2:
         output_file = "output.docx"
         save_flag = True
         save_doc = True
-        print("norskGPT: Saving as DOCX file")
+        print("norskGPT: Lagrer som DOCX-fil")
     else:
-        print("norskGPT: Continuing without saving.")
+        print("norskGPT: Fortsetter uten å lagre fil.")
 
-    init_message = "\n\n\nnorskGPT: You can type quit() on any request for user prompt to end the chat."
+    init_message = "\n\n\nnorskGPT: Du kan skrive quit() på hvilken som helst forespørsel om brukerprompt for å avslutte chatten."
     print(init_message)
     while True:
         # Saving conversation if requested to save.
@@ -119,7 +119,7 @@ def main(api_key, mod, max_tokens, temp, output_dir, message):
         tot_tokens += response["usage"]["total_tokens"]
         if tot_tokens > max_tokens:
             print(
-                f"\n\nnorskGPT: {session_tokens} total tokens used in this session and {tot_tokens} tokens used since last check. Would you like to contniue our conversation(y/n)?"
+                f"\n\nnorskGPT: {session_tokens} antall token brukt i denne økten og {tot_tokens} token brukt siden forrige sjekk. Ønsker du å fortsette samtalen vår (y/n)?"
             )
             user_response = input("\nUser: ")
             if user_response.lower() == "n":
