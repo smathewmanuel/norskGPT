@@ -46,6 +46,6 @@ To get started, follow these instructions:
 
     User: quit()
    ```
-3. As shown above, you can input `quit()` to end your conversation. You could also provide `save()` to save the last response as `output.docx` or `output.txt` file. You could have a new output file or you could also append the output to an existing output file.
-4. Along the way, you would be asked if you want to continue if the total tokens exceed a maximum number of tokens (1000, by default; you can change this value by editing `norskGPT.py`)
+3. As shown above, you can input `quit()` to end your conversation. You could also save the chat transcript as `output.docx` or `output.txt` file.
+4. Along the way, you would be asked if you want to continue if the total tokens exceed a maximum number of tokens (1000, by default; you can change this value. Refer to `.\config\README.md`)
 
