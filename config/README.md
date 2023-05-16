@@ -11,7 +11,7 @@ This folder contains the OpenAI API key. Follow these instructions to set it up:
 7. Click on the "Create" button to create your new API key.
 8. Your new API key will be displayed on the screen. Make sure to copy it and store it in a safe place, as you will need it to access the OpenAI API.
 9. Rename `sample-config.yml` to `config.yml`.
-10. Copy just the API key and replace `YOUR_API_KEY` in the `config.yml` file with your actual API key.
-11. You can also modify the `system_role_behavior` in the `config.yml` file.
+10. Copy your API key and replace `YOUR_API_KEY` in the `config.yml` file with your actual API key.
+11. You can change the `temperature`, and `max_tokens`in the `config.yml` file to suit your needs. You could also modify the `system_role_behavior` in the `config.yml` file.
 
 After completing these steps, your OpenAI API key will be stored in the `config.yml` file and ready for use.
